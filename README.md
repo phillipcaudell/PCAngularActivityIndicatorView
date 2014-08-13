@@ -16,7 +16,6 @@ Use exactly the same way as you would use UIActivityIndicatorView.
 2. Create an instance and add to your view.
 
 	```objc
-	// Where you ne
 	self.activityIndicator = [[PCAngularActivityIndicatorView alloc] initWithActivityIndicatorStyle:PCAngularActivityIndicatorViewStyleLarge];
 	self.activityIndicator.color = [UIColor redColor];
 	[self.activityIndicator startAnimation];
