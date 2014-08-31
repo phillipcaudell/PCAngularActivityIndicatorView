@@ -120,7 +120,7 @@
     [UIView animateWithDuration:0.5 animations:^{
         
         // Nice fade and ride
-        self.contentView.transform = CGAffineTransformMakeTranslation(0, - self.contentView.bounds.size.height / 3);
+        self.contentView.transform = CGAffineTransformMakeScale(1.2, 1.2);
         self.contentView.alpha = 0.0;
         
     } completion:^(BOOL finished) {
@@ -128,7 +128,7 @@
         _animating = NO;
         
         /// ...and reset back
-        self.contentView.transform = CGAffineTransformMakeTranslation(0, 0);
+        self.contentView.transform = CGAffineTransformMakeScale(1.0, 1.0);
         self.contentView.alpha = 1.0;
         
         self.shapeLayer.hidden = self.hidesWhenStopped;
