@@ -53,6 +53,8 @@ typedef NS_ENUM(NSInteger, PCAngularActivityIndicatorViewStyle) {
 */
 - (id)initWithActivityIndicatorStyle:(PCAngularActivityIndicatorViewStyle)style;
 
+- (id)initWithCustomSize:(CGSize)size lineWidth:(CGFloat)lineWidth andDuration:(CGFloat)duration;
+
 /**
  Starts the animation of the progress indicator.
  */
