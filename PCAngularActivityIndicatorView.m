@@ -29,6 +29,34 @@
     return [self initWithActivityIndicatorStyle:PCAngularActivityIndicatorViewStyleDefault];
 }
 
+- (id)initWithCustomSize:(CGSize)size lineWidth:(CGFloat)lineWidth andDuration:(CGFloat)duration
+{
+    CGRect frame = CGRectMake(0, 0, size.width, size.height);
+    
+    if (self = [super initWithFrame:frame]) {
+        self.contentView = [[UIView alloc] initWithFrame:self.bounds];
+        [self addSubview:self.contentView];
+        
+        CGFloat radius = frame.size.width / 2;
+        
+        self.shapeLayer = [CAShapeLayer layer];
+        self.shapeLayer.frame = self.bounds;
+        self.shapeLayer.lineWidth = lineWidth;
+        self.shapeLayer.fillColor = [[UIColor clearColor] CGColor];
+        self.shapeLayer.path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 2.0 * radius, 2.0 * radius) cornerRadius:radius].CGPath;
+        self.shapeLayer.lineCap = kCALineJoinRound;
+        self.shapeLayer.hidden = YES;
+        [self.contentView.layer insertSublayer:self.shapeLayer atIndex:0];
+        
+        // Defaults
+        self.hidesWhenStopped = YES;
+        self.duration = duration;
+        self.color = [UIColor lightGrayColor];
+    }
+    
+    return self;
+}
+
 - (id)initWithActivityIndicatorStyle:(PCAngularActivityIndicatorViewStyle)style
 {
     CGRect frame;
