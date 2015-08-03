@@ -21,6 +21,7 @@ Use exactly the same way as you would use UIActivityIndicatorView.
 	[self.activityIndicator startAnimation];
 	[self.view addSubview:self.activityIndicator];
 	```
+
 ## License 
 
 Copyright (c) 2014 Phillip Caudell phillipcaudell@gmail.com
